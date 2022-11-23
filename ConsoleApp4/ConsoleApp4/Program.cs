@@ -19,6 +19,8 @@ namespace ConsoleApp4
 
         static void ShowArray(int[,,] arr)
         {
+            const int cellWidth = 5;
+
             Console.WriteLine(String.Empty);
             for (int i = 0; i < arr.GetLength(0); i++)
             {
@@ -26,7 +28,7 @@ namespace ConsoleApp4
                 {
                     for (int k = 0; k < arr.GetLength(2); k++)
                     {
-                        Console.Write($"{arr[i, j, k],5}");
+                        Console.Write($"{arr[i, j, k], cellWidth}({ i}, {j}, {k})" );
                     }
                     Console.WriteLine(String.Empty);
                 }
