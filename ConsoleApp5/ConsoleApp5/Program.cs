@@ -18,7 +18,7 @@ namespace ConsoleApp5
 
         static void ShowArray(int[,] arr)
         {
-            const int cellWidth = 5;
+            const int cellWidth = 2;  // колличество символов, которое занимает элемент массива при выводе в консоль.
 
             Console.WriteLine(String.Empty);
             for (int i = 0; i < arr.GetLength(0); i++)
@@ -40,20 +40,24 @@ namespace ConsoleApp5
 
             int[,] result = new int[n, m];
 
-            int row = 0, col = 0, dx = 1, dy = 0, dirChanges = 0, gran = m;
-            for (int i = 0; i < result.Length; i++)
+            int i = 0, j = 0, dx = 1, dy = 0, 
+                dirChanges = 0, border = m;
+
+            for (int k = 0; k < result.Length; k++)
             {
-                result[row, col] = i + 1;
-                if (--gran == 0)
+                result[i, j] = k + 1;
+
+                if (--border == 0)
                 {
-                    gran = m * (dirChanges % 2) + n * ((dirChanges + 1) % 2) - (dirChanges / 2 - 1) - 2;
+                    border = m * (dirChanges % 2) + n * ((dirChanges + 1) % 2) - (dirChanges / 2 - 1) - 2;
                     int temp = dx;
                     dx = -dy;
                     dy = temp;
                     dirChanges++;
                 }
-                col += dx;
-                row += dy;
+                
+                i += dy;
+                j += dx;
             }
 
             return result;
