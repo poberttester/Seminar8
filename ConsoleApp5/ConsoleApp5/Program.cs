@@ -13,7 +13,7 @@ namespace ConsoleApp5
             newArray = FillArray(array);
             ShowArray(newArray);
 
-            Console.ReadKey();
+            Console.ReadKey(); 
 
         }
 
