@@ -39,7 +39,7 @@ namespace ConsoleApp3
             Console.WriteLine(String.Empty);
         }
 
-        static int[,] MultiplicationOfMatrices(int[,] arr1, int[,] arr2)
+        static int[,] MultiplicationOfMatrices(int[,] arr1, int[,] arr2)    // Программа перемножает только квадратные матрицы.
         {
             int [,] resultArr = new int[arr1.GetLength(0), arr1.GetLength(1)];
             
