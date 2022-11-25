@@ -47,7 +47,7 @@ namespace ConsoleApp2
 
                 for (int j = 0; j < arr.GetLength(1); j++)
                 {
-                    summ += summ + arr[i, j];                    
+                    summ = summ + arr[i, j];                    
                 }
                
 
@@ -57,7 +57,7 @@ namespace ConsoleApp2
                     minString = i;
                 }
             }
-            Console.WriteLine($"Номер строки с наименьшей суммой {minValue} элементов: {minString}");
+            Console.WriteLine($"Номер строки с наименьшей суммой элементов: {minString}");
         }
     }
 }
